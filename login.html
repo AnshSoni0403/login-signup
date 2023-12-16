@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <!-- Include the Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(250, 231, 234);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #section, #signup2 {
+            width: 30%;
+            height: auto;
+            border: 2px solid #ffff;
+            border-radius: 9px;
+            padding: 20px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            background-color: #ffff;
+            text-align: center;
+        }
+
+        .title {
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #email, #password ,#name,#phone,#email_signup,#password_signup{
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+        }
+
+        #login, #signup {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+            cursor: pointer;
+            transition: background 0.3s;
+            outline: none;
+        }
+
+        #login:hover, #signup:hover {
+            background: linear-gradient(to right, #b13c8e, #f46121);
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #6f6a6a;
+        }
+
+        #signup2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="section">
+        <h1 class="title">Login</h1>
+        <input type="email" id="email" placeholder="Email-Id">
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <br>
+        <button type="submit" id="login">LOGIN</button><br><br>
+        <h3>Don't have an account?</h3>
+        <button type="submit" id="signup" onclick="signup()">SIGNUP</button>
+    </div>
+    <div id="signup2">
+        <h1 class="title">SIGN UP</h1>
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email_signup" placeholder="E-Mail">
+        <input type="number" id="phone" placeholder="Phone No.">
+        <input type="password" id="password_signup" placeholder="Password">
+        <br>
+        <br>
+        <h3>Created an account?</h3>
+        <button type="submit" id="login" onclick="login()">LOGIN</button>
+    </div>
+
+    <script>
+        function signup() {
+            var loginBox = document.getElementById("section");
+            var signupBox = document.getElementById("signup2");
+
+            loginBox.style.display = "none";
+            signupBox.style.display = "block";
+        }
+
+        function login() {
+            var loginBox = document.getElementById("section");
+            var signupBox = document.getElementById("signup2");
+
+            loginBox.style.display = "block";
+            signupBox.style.display = "none";
+        }
+    </script>
+</body>
+</html>
